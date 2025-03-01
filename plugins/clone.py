@@ -1,8 +1,6 @@
-# Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
-# Ask Doubt on telegram @KingVJ01
-
-# Clone Code Credit : YT - @Tech_VJ / TG - @VJ_Bots / GitHub - @VJBots
+# Don't Remove Credit @Spideyofficial777
+# Subscribe YouTube Channel For Amazing Bot @spidey_official_77
+# Ask Doubt on telegram @Spideyofficial_777
 
 import re
 from Script import script
@@ -19,13 +17,13 @@ async def clone_menu(client, message):
         return await message.reply("**ʏᴏᴜ ʜᴀᴠᴇ ᴀʟʀᴇᴀᴅʏ ᴄʟᴏɴᴇᴅ ᴀ ʙᴏᴛ ᴅᴇʟᴇᴛᴇ ғɪʀsᴛ ɪᴛ ʙʏ /deleteclone**")
     else:
         pass
-    techvj = await client.ask(message.chat.id, "<b>1) sᴇɴᴅ <code>/newbot</code> ᴛᴏ @BotFather\n2) ɢɪᴠᴇ ᴀ ɴᴀᴍᴇ ꜰᴏʀ ʏᴏᴜʀ ʙᴏᴛ.\n3) ɢɪᴠᴇ ᴀ ᴜɴɪǫᴜᴇ ᴜsᴇʀɴᴀᴍᴇ.\n4) ᴛʜᴇɴ ʏᴏᴜ ᴡɪʟʟ ɢᴇᴛ ᴀ ᴍᴇssᴀɢᴇ ᴡɪᴛʜ ʏᴏᴜʀ ʙᴏᴛ ᴛᴏᴋᴇɴ.\n5) ꜰᴏʀᴡᴀʀᴅ ᴛʜᴀᴛ ᴍᴇssᴀɢᴇ ᴛᴏ ᴍᴇ.\n\n/cancel - ᴄᴀɴᴄᴇʟ ᴛʜɪs ᴘʀᴏᴄᴇss.</b>")
-    if techvj.text == '/cancel':
-        await techvj.delete()
+    Spidey = await client.ask(message.chat.id, "<b>1) sᴇɴᴅ <code>/newbot</code> ᴛᴏ @BotFather\n2) ɢɪᴠᴇ ᴀ ɴᴀᴍᴇ ꜰᴏʀ ʏᴏᴜʀ ʙᴏᴛ.\n3) ɢɪᴠᴇ ᴀ ᴜɴɪǫᴜᴇ ᴜsᴇʀɴᴀᴍᴇ.\n4) ᴛʜᴇɴ ʏᴏᴜ ᴡɪʟʟ ɢᴇᴛ ᴀ ᴍᴇssᴀɢᴇ ᴡɪᴛʜ ʏᴏᴜʀ ʙᴏᴛ ᴛᴏᴋᴇɴ.\n5) ꜰᴏʀᴡᴀʀᴅ ᴛʜᴀᴛ ᴍᴇssᴀɢᴇ ᴛᴏ ᴍᴇ.\n\n/cancel - ᴄᴀɴᴄᴇʟ ᴛʜɪs ᴘʀᴏᴄᴇss.</b>")
+    if Spidey.text == '/cancel':
+        await Spidey.delete()
         return await message.reply('<b>ᴄᴀɴᴄᴇʟᴇᴅ ᴛʜɪs ᴘʀᴏᴄᴇss 🚫</b>')
-    if techvj.forward_from and techvj.forward_from.id == 93372553:
+    if Spidey.forward_from and Spidey.forward_from.id == 93372553:
         try:
-            bot_token = re.findall(r"\b(\d+:[A-Za-z0-9_-]+)\b", techvj.text)[0]
+            bot_token = re.findall(r"\b(\d+:[A-Za-z0-9_-]+)\b", Spidey.text)[0]
         except:
             return await message.reply('<b>sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ 😕</b>')
     else:
@@ -33,17 +31,17 @@ async def clone_menu(client, message):
     user_id = message.from_user.id
     msg = await message.reply_text("**👨‍💻 ᴡᴀɪᴛ ᴀ ᴍɪɴᴜᴛᴇ ɪ ᴀᴍ ᴄʀᴇᴀᴛɪɴɢ ʏᴏᴜʀ ʙᴏᴛ ❣️**")
     try:
-        vj = Client(
+        Spidey = Client(
             f"{bot_token}", API_ID, API_HASH,
             bot_token=bot_token,
-            plugins={"root": "CloneTechVJ"}
+            plugins={"root": "CloneSpidey"}
         )
-        await vj.start()
-        bot = await vj.get_me()
+        await Spidey.start()
+        bot = await Spidey.get_me()
         await db.add_clone_bot(bot.id, user_id, bot_token)
         await msg.edit_text(f"<b>sᴜᴄᴄᴇssғᴜʟʟʏ ᴄʟᴏɴᴇᴅ ʏᴏᴜʀ ʙᴏᴛ: @{bot.username}.\n\nʏᴏᴜ ᴄᴀɴ ᴄᴜsᴛᴏᴍɪsᴇ ʏᴏᴜʀ ᴄʟᴏɴᴇ ʙᴏᴛ ʙʏ /settings ᴄᴏᴍᴍᴀɴᴅ ɪɴ ʏᴏᴜʀ ᴄʟᴏɴᴇ ʙᴏᴛ</b>")
     except BaseException as e:
-        await msg.edit_text(f"⚠️ <b>Bot Error:</b>\n\n<code>{e}</code>\n\n**Kindly forward this message to @KingVJ01 to get assistance.**")
+        await msg.edit_text(f"⚠️ <b>Bot Error:</b>\n\n<code>{e}</code>\n\n**Kindly forward this message to @KingSpidey01 to get assistance.**")
 
 @Client.on_message(filters.command('deleteclone'))
 async def delete_clone_menu(client, message):
@@ -61,12 +59,12 @@ async def restart_bots():
     for bot in bots:
         bot_token = bot['bot_token']
         try:
-            vj = Client(
+            Spidey = Client(
                 f"{bot_token}", API_ID, API_HASH,
                 bot_token=bot_token,
-                plugins={"root": "CloneTechVJ"},
+                plugins={"root": "CloneSpidey"},
             )
-            await vj.start()
+            await Spidey.start()
         except Exception as e:
             print(f"Error while restarting bot with token {bot_token}: {e}")
         
