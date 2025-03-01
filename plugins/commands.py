@@ -387,7 +387,7 @@ async def start(client, message):
             VERIFY_IMG = "https://graph.org/file/1669ab9af68eaa62c3ca4.jpg"                           
             if PREMIUM_AND_REFERAL_MODE == True:
                 text += "<b>ɪғ ʏᴏᴜ ᴡᴀɴᴛ ᴅɪʀᴇᴄᴛ ғɪʟᴇꜱ ᴡɪᴛʜᴏᴜᴛ ᴀɴʏ ᴠᴇʀɪғɪᴄᴀᴛɪᴏɴꜱ ᴛʜᴇɴ ʙᴜʏ ʙᴏᴛ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ ☺️\n\n💶 ꜱᴇɴᴅ /plan ᴛᴏ ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ</b>"           
-            await message.reply_photo(photo=VERIFY_IMG, caption=text.format(message.from_user.first_name), parse_mode="HTML", protect_content=True)
+            await message.reply_photo(photo=VERIFY_IMG, caption=text.format(message.from_user.first_name), parse_mode="HTML")
             await verify_user(client, userid, token)
         else:
             return await message.reply_text(text="<b>ɪɴᴠᴀʟɪᴅ ʟɪɴᴋ ᴏʀ ᴇxᴘɪʀᴇᴅ ʟɪɴᴋ</b>", protect_content=True)
