@@ -1,6 +1,8 @@
-# Don't Remove Credit @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot @Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+# Don't Remove Credit @Spideyofficial777
+# Subscribe YouTube Channel For Amazing Bot @Spideyofficial_777
+# Ask Doubt on telegram @hacker_x_official_777
+
+# Clone Code Credit : YT - @Spidey_official_777 / TG - @hacker_x_official_777/ GitHub - @Spideyofficial777
 
 
 from __future__ import unicode_literals
