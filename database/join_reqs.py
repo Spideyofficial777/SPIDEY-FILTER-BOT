@@ -1,3 +1,7 @@
+# Don't Remove Credit @Spideyofficial777
+# Subscribe YouTube Channel For Amazing Bot @spidey_official_77
+# Ask Doubt on telegram @Spideyofficial_777
+
 import motor.motor_asyncio
 from info import AUTH_CHANNEL, OTHER_DB_URI
 
