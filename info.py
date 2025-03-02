@@ -114,23 +114,23 @@ USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 
 
 # Token Verification Info :
-VERIFY = bool(environ.get('VERIFY', True))
+VERIFY = bool(environ.get('VERIFY', False))
 VERIFY_SHORTLINK_URL = environ.get('VERIFY_SHORTLINK_URL', 'shortxlinks.com')
 VERIFY_SHORTLINK_API = environ.get('VERIFY_SHORTLINK_API', '09c3f9bc3a8b121b1e6b82a954e59da523dd188e')
 VERIFY_TUTORIAL = environ.get('VERIFY_TUTORIAL', 't.me/spideyofficial777')
 
 # If You Fill Second Shortner Then Bot Attach Both First And Second Shortner And Use It For Verify.
-VERIFY_SECOND_SHORTNER = bool(environ.get('VERIFY_SECOND_SHORTNER', False))
+VERIFY_SECOND_SHORTNER = bool(environ.get('VERIFY_SECOND_SHORTNER', True))
 # if verify second shortner is True then fill below url and api
-VERIFY_SND_SHORTLINK_URL = environ.get('VERIFY_SND_SHORTLINK_URL', '')
-VERIFY_SND_SHORTLINK_API = environ.get('VERIFY_SND_SHORTLINK_API', '')
+VERIFY_SND_SHORTLINK_URL = environ.get('VERIFY_SND_SHORTLINK_URL', 'api.modijiurl.com')
+VERIFY_SND_SHORTLINK_API = environ.get('VERIFY_SND_SHORTLINK_API', 'fb30c8d0baba3d820e2fb4576f8ea96df7ca04da')
 
 
 # Shortlink Info
 SHORTLINK_MODE = bool(environ.get('SHORTLINK_MODE', True)) # Set True Or False
 SHORTLINK_URL = environ.get('SHORTLINK_URL', 'shortxlinks.com')
 SHORTLINK_API = environ.get('SHORTLINK_API', '09c3f9bc3a8b121b1e6b82a954e59da523dd188e')
-TUTORIAL = environ.get('TUTORIAL', 't.me/spideyofficial777') # How Open Shortner Link Video Link , Channel Link Where You Upload Your Video.
+TUTORIAL = environ.get('TUTORIAL', 't.me/spideyofficial_777/12') # How Open Shortner Link Video Link , Channel Link Where You Upload Your Video.
 
 
 # Others
@@ -152,9 +152,9 @@ QUALITIES = ["360p", "480p", "720p", "1080p", "1440p", "2160p"]
 YEARS = ["1900", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"]
 
 
-                           # Don't Remove Credit @VJ_Botz
-                           # Subscribe YouTube Channel For Amazing Bot @Tech_VJ
-                           # Ask Doubt on telegram @KingVJ01
+                           # Don't Remove Credit @Spideyofficial777
+                           # Subscribe YouTube Channel For Amazing Bot @Spideyofficial_777
+                           # Ask Doubt on telegram @hacker_x_official_777
 
 
 # Online Stream and Download
@@ -168,7 +168,7 @@ if 'DYNO' in environ:
     ON_HEROKU = True
 else:
     ON_HEROKU = False
-URL = environ.get("URL", "https://exclusive-babette-spideyxofficial-d04b91e7.koyeb.app/")
+URL = environ.get("URL", "https://legal-danyette-spideyxofficial-9956fb45.koyeb.app/")
 
 
 # Rename Info : If True Then Bot Rename File Else Not
@@ -195,6 +195,6 @@ else:
     SEC_FILE_DB_URI = S_DB_URI    # This Db is for File Data Store When First Db Is Going To Be Full.
 
 
-# Don't Remove Credit @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot @Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+# Don't Remove Credit @Spideyofficial777
+# Subscribe YouTube Channel For Amazing Bot @Spideyofficial_777
+# Ask Doubt on telegram @hacker_x_official_777
