@@ -7,7 +7,9 @@ from struct import pack
 from pyrogram.file_id import FileId
 from pymongo import MongoClient
 from pymongo.errors import DuplicateKeyError
-from info import FILE_DB_URI, SEC_FILE_DB_URI, DATABASE_NAME, COLLECTION_NAME, MULTIPLE_DATABASE, USE_CAPTION_FILTER, MAX_B_TN
+from umongo import Instance, Document, fields
+from motor.motor_asyncio import AsyncIOMotorClient
+from info import * # FILE_DB_URI, SEC_FILE_DB_URI, DATABASE_NAME, COLLECTION_NAME, MULTIPLE_DATABASE, USE_CAPTION_FILTER, MAX_B_TN
 
 # First Database For File Saving 
 client = MongoClient(FILE_DB_URI)
@@ -20,6 +22,26 @@ sec_db = sec_client[DATABASE_NAME]
 sec_col = sec_db[COLLECTION_NAME]
 
 
+client = AsyncIOMotorClient(DATABASE_URI)
+mydb = client[DATABASE_NAME]
+instance = Instance.from_db(mydb)
+
+
+@instance.register
+class Media(Document):
+    file_id = fields.StrField(attribute='_id')
+    file_ref = fields.StrField(allow_none=True)
+    file_name = fields.StrField(required=True)
+    file_size = fields.IntField(required=True)
+    mime_type = fields.StrField(allow_none=True)
+    caption = fields.StrField(allow_none=True)
+    file_type = fields.StrField(allow_none=True)
+
+    class Meta:
+        indexes = ('$file_name', )
+        collection_name = COLLECTION_NAME
+        
+        
 async def save_file(media):
     """Save file in the database."""
     
@@ -77,6 +99,27 @@ def is_file_already_saved(file_id, file_name):
             
     return False
 
+async def get_bad_files(query, file_type=None, offset=0, filter=False):
+    query = query.strip()
+    if not query:
+        raw_pattern = '.'
+    elif ' ' not in query:
+        raw_pattern = r'(\b|[\.\+\-_])' + query + r'(\b|[\.\+\-_])'
+    else:
+        raw_pattern = query.replace(' ', r'.*[\s\.\+\-_]')
+    try:
+        regex = re.compile(raw_pattern, flags=re.IGNORECASE)
+    except:
+        return []
+    filter = {'file_name': regex}
+    if file_type:
+        filter['file_type'] = file_type
+    total_results = await Media.count_documents(filter)
+    cursor = Media.find(filter)
+    cursor.sort('$natural', -1)
+    files = await cursor.to_list(length=total_results)
+    return files, total_results
+    
 async def get_search_results(chat_id, query, file_type=None, max_results=10, offset=0, filter=False):
     """For given query return (results, next_offset)"""
     
@@ -160,8 +203,11 @@ def encode_file_id(s: bytes) -> str:
             r += bytes([i])
     return base64.urlsafe_b64encode(r).decode().rstrip("=")
     
+def encode_file_ref(file_ref: bytes) -> str:
+        return base64.urlsafe_b64encode(file_ref).decode().rstrip("=")
+       
 def unpack_new_file_id(new_file_id):
-    """Return file_id"""
+    """Return file_id, file_ref"""
     decoded = FileId.decode(new_file_id)
     file_id = encode_file_id(
         pack(
@@ -172,5 +218,6 @@ def unpack_new_file_id(new_file_id):
             decoded.access_hash
         )
     )
-    return file_id
+    file_ref = encode_file_ref(decoded.file_reference)
+    return file_id, file_ref
     

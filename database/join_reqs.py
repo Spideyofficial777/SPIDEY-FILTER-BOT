@@ -40,6 +40,9 @@ class JoinReqs:
 
     async def delete_all_users(self):
         await self.col.delete_many({})
-
+   
+    async def find_join_req(self, id):
+        return bool(await self.req.find_one({'id': id}))
+        
     async def get_all_users_count(self):
         return await self.col.count_documents({})
